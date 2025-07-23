@@ -4,9 +4,13 @@ const SingleBook = (props) => {
   return (
     <Container>
       <Row className="justify-content-center mt-5">
-        <Col xs={12} className="text-center">
+        <Col xs={12} md={6} lg={3} className="text-center">
           <Card className="book-Card" asin={props.asin}>
-            <Card.Img className="img-fluid" variant="top" src={props.img} />
+            <Card.Img
+              className="img-fluid"
+              variant="top"
+              src={props.imgCover}
+            />
             <Card.Body className="d-flex flex-column">
               <Card.Title>{props.title}</Card.Title>
               <Card.Text className="flex-grow-1"></Card.Text>
