@@ -1,13 +1,13 @@
 import SingleBook from "./SingleBook"
-import { Container, Row } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 
 const BookList = (props) => {
   return (
-    <>
-      {props.bookArray.map((book) => {
-        return (
-          <Container>
-            <Row className="justify-content-center mt-5">
+    <Container>
+      <Row className="justify-content-center mt-5">
+        {props.bookArray.map((book) => {
+          return (
+            <Col xs={12} md={6} lg={4} key={book.asin} className="text-center">
               <SingleBook
                 asin={book.asin}
                 title={book.title}
@@ -15,11 +15,11 @@ const BookList = (props) => {
                 price={book.price}
                 category={book.category}
               />
-            </Row>
-          </Container>
-        )
-      })}
-    </>
+            </Col>
+          )
+        })}
+      </Row>
+    </Container>
   )
 }
 
